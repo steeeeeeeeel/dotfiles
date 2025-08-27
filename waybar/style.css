@@ -1,11 +1,20 @@
+@define-color bubble-background rgba(0,0,0,0.85);
+/*@define-color bubble-background #202020;*/
+@define-color icon-hover #aaaaaa;
+@define-color font-color #ffffff;
+@define-color border-color rgba(171, 71, 188, 0.95);
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Symbols Nerd Font, JetBrainsMono Nerd Font, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    /* I have switched to nerd fonts icons */
+    font-family: Symbols NerdFont Mono, JetBrainsMono Nerd Font, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    min-height: 0;
 }
 
 window#waybar {
     color: #ffffff;
+    background-color: transparent;
 }
 
 window#waybar.hidden {
@@ -25,21 +34,6 @@ window#waybar.termite {
     background-color: #3F3F3F;
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
-.modules-left {
-    border: 1px solid black;
-    border-radius: 8px;
-}
-
-.modules-right {
-    border: 1px solid black;
-    border-radius: 8px;
-}
-
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     /* box-shadow: inset 0 -3px transparent; */
@@ -53,19 +47,69 @@ button:hover {
     background: inherit;
 }
 
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
+/* Global module style */
+.module {
+    background: @bubble-background;
+}
+
+.modules-left {
+    margin-left: 6px;
+}
+.modules-right {
+    margin-right: 6px;
+}
+
+.modules-left > widget > *,
+.modules-center > widget > *,
+.modules-right > widget > * {
+    margin-top: 2px;
+    padding: 0 4px;
+    border-top: 1px solid @border-color;
+    border-bottom: 1px solid @border-color;
+    transition: color 0.5s;
+}
+.modules-left > widget:first-child > *, 
+.modules-center > widget:first-child > *, 
+.modules-right > widget:first-child > * {
+    padding-left: 10px;
+    border-left: 1px solid @border-color;
+    border-radius: 10px 0 0 10px;
+}
+.modules-left > widget:last-child > *,
+.modules-center > widget:last-child > *,
+.modules-right > widget:last-child > * {
+    padding-right: 10px;
+    border-right: 1px solid @border-color;
+    border-radius: 0 10px 10px 0;
+}
+
+/* maintain conistent borders even when there is only one element */
+.modules-left > widget:only-child > *,
+.modules-center > widget:only-child > *,
+.modules-right > widget:only-child > * {
+    padding: 0 6px;
+    border: 1px solid @border-color;
+    border-radius: 10px;
+}
+
+.modules-left > widget > *:hover,
+.modules-right > widget > *:hover {
+    color: @icon-hover;
 }
 
 #workspaces button {
     padding: 0 0.5px;
     background-color: transparent;
     color: #ffffff;
+    transition: color 0.5s;
+}
+
+#workspaces button:hover {
+    color: @icon-hover;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: #eb4d4b;
 }
 
 #mode {
@@ -73,48 +117,9 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
 #mpd {
     padding: 0 10px;
     color: #ffffff;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-#clock {
-    background-color: inherit;
-}
-
-#battery {
-    background-color: inherit;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
@@ -128,43 +133,25 @@ button:hover {
     animation-direction: alternate;
 }
 
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
     color: #ffffff;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
     color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
+    color: #ffffff;
+}
+
+#power-profiles-daemon:hover {
+    color: @icon-hover;
 }
 
 label:focus {
     background-color: #000000;
 }
-
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight 
 
 #network 
 
@@ -172,15 +159,16 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#pulseaudio 
-
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
+    color: #ffffff;
+}
+
+#wireplumber:hover {
+    color: @icon-hover;
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    color: #ffffff;
 }
 
 #custom-media {
@@ -197,14 +185,6 @@ label:focus {
     background-color: #ffa000;
 }
 
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
 #tray 
 
 #tray > .passive {
@@ -214,15 +194,6 @@ label:focus {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
 }
 
 #mpd {
@@ -264,33 +235,4 @@ label:focus {
 
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
 }
