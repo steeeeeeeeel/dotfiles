@@ -1,5 +1,5 @@
-@define-color bar-background #363636;
-/*@define-color bar-background #202020;*/
+@define-color bubble-background rgba(0,0,0,0.85);
+/*@define-color bubble-background #202020;*/
 @define-color icon-hover #aaaaaa;
 @define-color font-color #ffffff;
 @define-color border-color rgba(171, 71, 188, 0.95);
@@ -14,8 +14,7 @@
 
 window#waybar {
     color: #ffffff;
-    background-color: @bar-background;
-    border-bottom: 1px solid #262626;
+    background-color: transparent;
 }
 
 window#waybar.hidden {
@@ -49,16 +48,53 @@ button:hover {
 }
 
 /* Global module style */
+.module {
+    background: @bubble-background;
+}
 
 .modules-left {
-    margin-left:6px;
+    margin-left: 6px;
 }
 .modules-right {
     margin-right: 6px;
 }
 
-.modules * {
-    margin: 5px;
+.modules-left > widget > *,
+.modules-center > widget > *,
+.modules-right > widget > * {
+    margin-top: 2px;
+    padding: 0 4px;
+    border-top: 1px solid @border-color;
+    border-bottom: 1px solid @border-color;
+    transition: color 0.5s;
+}
+.modules-left > widget:first-child > *, 
+.modules-center > widget:first-child > *, 
+.modules-right > widget:first-child > * {
+    padding-left: 10px;
+    border-left: 1px solid @border-color;
+    border-radius: 10px 0 0 10px;
+}
+.modules-left > widget:last-child > *,
+.modules-center > widget:last-child > *,
+.modules-right > widget:last-child > * {
+    padding-right: 10px;
+    border-right: 1px solid @border-color;
+    border-radius: 0 10px 10px 0;
+}
+
+/* maintain conistent borders even when there is only one element */
+.modules-left > widget:only-child > *,
+.modules-center > widget:only-child > *,
+.modules-right > widget:only-child > * {
+    padding: 0 6px;
+    border: 1px solid @border-color;
+    border-radius: 10px;
+}
+
+.modules-left > widget > *:hover,
+.modules-right > widget > *:hover {
+    color: @icon-hover;
 }
 
 #workspaces button {
