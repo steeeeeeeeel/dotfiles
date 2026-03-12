@@ -9,7 +9,13 @@ vim.opt.cursorline = true
 vim.opt.list = true
 vim.opt.listchars = { multispace = '·' }
 
---Tabs
+--  Tabs
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+-- Errors
+vim.diagnostic.enable = true
+vim.diagnostic.config({
+    virtual_lines = true,
+})
