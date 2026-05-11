@@ -17,5 +17,11 @@ vim.opt.expandtab = true
 -- Errors
 vim.diagnostic.enable = true
 vim.diagnostic.config({
-    virtual_lines = true,
+    virtual_text = {
+        spacing = 2,
+    },
+    signs = true,
+    update_in_insert = false,
+    float = true,
+    underline = false,
 })
