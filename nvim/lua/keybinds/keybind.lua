@@ -1,7 +1,7 @@
 vim.keymap.set(
     'n',
     '<Tab>',
-    '<cmd>:tabNext<CR>',
+    '<cmd>:tabnext<CR>',
     {desc = 'Next Tab'}
 )
 vim.keymap.set(
@@ -10,7 +10,6 @@ vim.keymap.set(
     '<cmd>:tabprevious<CR>',
     {
         desc = 'Previous Tab',
-        noremap = true
     }
 )
 vim.keymap.set(
