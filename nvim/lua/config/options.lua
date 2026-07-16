@@ -25,3 +25,8 @@ vim.diagnostic.config({
     float = true,
     underline = false,
 })
+
+-- Spellcheck
+vim.opt.spell = true
+vim.opt.spelllang = 'en_au'
+
