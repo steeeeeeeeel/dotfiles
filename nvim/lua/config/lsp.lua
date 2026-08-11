@@ -1,2 +1,15 @@
-vim.lsp.enable("clangd")
-vim.lsp.enable("vtsls")
+local lsps = {
+    {"clangd"},
+    {"vtsls"},
+    {"dockerfmt"},
+    {"docker_language_server"},
+    {"html-lsp"},
+}
+
+for _, lsp in pairs(lsps) do
+    local name, config = lsp[1], lsp [2]
+    vim.lsp.enable(name)
+    if config then
+        vim.lsp.config(name, config)
+    end
+end
