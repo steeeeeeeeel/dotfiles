@@ -3,7 +3,11 @@ local lsps = {
     {"vtsls"},
     {"dockerfmt"},
     {"docker_language_server"},
-    {"html-lsp"},
+    {"oxfmt"},
+    {"cssls"},
+    {"html", {
+        filetypes = { "html", "handlebars", "html.handlebars"},
+    }},
 }
 
 for _, lsp in pairs(lsps) do
