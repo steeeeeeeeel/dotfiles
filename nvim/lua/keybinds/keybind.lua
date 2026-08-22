@@ -2,7 +2,9 @@ vim.keymap.set(
     'n',
     '<Tab>',
     '<cmd>:tabnext<CR>',
-    {desc = 'Next Tab'}
+    {
+        desc = 'Next Tab'
+    }
 )
 vim.keymap.set(
     'n',
@@ -19,5 +21,13 @@ vim.keymap.set(
     {
         desc = "Exit insert mode",
         noremap = true
+    }
+)
+vim.keymap.set(
+    'n',
+    '<CR>',
+    '<cmd>:noh',
+    {
+        desc = "Clear search highlighting when return input in normal mode"
     }
 )
