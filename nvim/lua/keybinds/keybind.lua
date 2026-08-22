@@ -28,6 +28,7 @@ vim.keymap.set(
     '<CR>',
     '<cmd>:noh',
     {
-        desc = "Clear search highlighting when return input in normal mode"
+        desc = "Clear search highlighting when return input in normal mode",
+        noremap = true
     }
 )
