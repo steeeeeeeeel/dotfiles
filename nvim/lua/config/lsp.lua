@@ -1,10 +1,10 @@
 local lsps = {
     {"clangd"},
     {"vtsls"},
-    {"dockerfmt"},
     {"docker_language_server"},
     {"oxfmt"},
     {"cssls"},
+    {"rust_analyzer"},
     {"html", {
         filetypes = { "html", "handlebars", "html.handlebars"},
     }},
