@@ -1,3 +1,21 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
+vim.keymap.set(
+    'n',
+    '<leader>w',
+    ':write<CR>',
+    {
+        desc = 'Write current file'
+    }
+)
+vim.keymap.set(
+    'n',
+    '<leader>q',
+    ':quit<CR>',
+    {
+        desc = 'Quit'
+    }
+)
 vim.keymap.set(
     'n',
     '<Tab>',

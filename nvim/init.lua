@@ -1,6 +1,6 @@
 require("config.options")
+require("keybinds.keybind")
 require("config.lazy")
 require("lazy").setup("plugins")
 require("config.colour")
 require("config.lsp")
-require("keybinds.keybind")
