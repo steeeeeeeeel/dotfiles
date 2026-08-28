@@ -32,5 +32,4 @@ vim.opt.spelllang = 'en_au'
 
 -- Wildmode
 vim.opt.wildmenu = true
-vim.o.wildmode = 'longest:list,list'
-
+vim.o.wildmode = 'longest,list:full'
