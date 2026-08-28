@@ -8,7 +8,7 @@ local lsps = {
     {"wc_language_server"},
     {"oxlint"},
     {"html", {
-        filetypes = { "html", "handlebars", "html.handlebars"},
+        filetypes = { "html", "hbs", "handlebars", "html.handlebars"},
     }},
 }
 

@@ -1,5 +1,9 @@
 return {
     'windwp/nvim-ts-autotag',
     lazy = false,
-    opts = {},
+    opts = {
+        aliases = {
+            ["handlebars"] = "html",
+        }
+    },
 } 

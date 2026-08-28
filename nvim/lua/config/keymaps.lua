@@ -37,7 +37,7 @@ vim.keymap.set(
     '<C-c>',
     '<Esc>',
     {
-        desc = "Exit insert mode",
+        desc = 'Exit insert mode',
         noremap = true
     }
 )
@@ -46,7 +46,7 @@ vim.keymap.set(
     '<CR>',
     '<cmd>:let @/ = ""<CR>',
     {
-        desc = "Clear search highlighting when return input in normal mode",
+        desc = 'Clear search highlighting when return input in normal mode',
         noremap = true
     }
 )
