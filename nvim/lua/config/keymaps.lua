@@ -10,11 +10,6 @@ vim.keymap.set('n', '<leader>q', ':quit<CR>',
         desc = 'Quit'
     }
 )
-vim.keymap.set('n', '<leader>wq', ':wq<CR>',
-    {
-        desc = 'Write and Quit'
-    }
-)
 vim.keymap.set('n', '<Tab>', '<cmd>:tabnext<CR>',
     {
         desc = 'Next Tab'
