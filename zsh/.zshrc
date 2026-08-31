@@ -10,9 +10,9 @@ bindkey -v
 export EDITOR=nvim
 
 # Alises
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
+alias ..='zoxide ../'
+alias ...='zoxide ../../'
+alias ....='zoxide ../../../'
 
 alias ls='ls --color -F'
 alias grep='grep --color'
@@ -42,4 +42,4 @@ compinit
 promptinit
 prompt redhat
 
-eval "$(zoxide init cmd cd zsh)"
+eval "$(zoxide init --cmd cd zsh)"
