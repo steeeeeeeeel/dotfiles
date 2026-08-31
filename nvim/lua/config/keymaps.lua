@@ -32,7 +32,7 @@ vim.keymap.set('n', '<CR>', '<cmd>:let @/ = ""<CR>',
         noremap = true
     }
 )
-vim.keymap.set('n', '<leader>i', function( )vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+vim.keymap.set('n', '<leader>i', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
     {
         desc = 'Toggle inlay hints',
         noremap = true
