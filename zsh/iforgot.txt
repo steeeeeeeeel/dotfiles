@@ -1,0 +1,2 @@
+File Recovery                   photorec
+Search installed packages       pacman -Qs <string>
