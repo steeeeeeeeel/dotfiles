@@ -14,6 +14,12 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- Indent
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.cindent = true
+vim.opt.smarttab = true
+
 -- Errors
 vim.diagnostic.enable = true
 vim.diagnostic.config({
