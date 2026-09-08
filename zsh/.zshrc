@@ -14,10 +14,16 @@ function gdebug () {
     eval "$(GIT_TRACE=1 GIT_TRACE_PACKET=1 GIT_TRACE_PERFORMANCE=1 GIT_CURL_VERBOSE=1 $1 $2)"
 }
 
+function webm2gif() {
+    ffmpeg -y -i "$1" -vf palettegen _tmp_palette.png
+    ffmpeg -y -i "$1" -i _tmp_palette.png -filter_complex paletteuse -r 10 "${1%.webm}.gif"
+    rm _tmp_palette.png
+}
+
 # Alises
-alias ..='zoxide ../'
-alias ...='zoxide ../../'
-alias ....='zoxide ../../../'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 
 alias ls='ls --color -F'
 alias grep='grep --color'
