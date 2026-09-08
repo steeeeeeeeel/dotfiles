@@ -44,6 +44,7 @@ alias quit='exit'
 
 alias btw='neofetch'
 alias iforgot='cat ~/.config/zsh/iforgot.txt'
+alias vimtricks='cat ~/.config/nvim/vimtricks.txt'
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/steel/.zshrc'
