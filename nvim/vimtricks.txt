@@ -1,0 +1,1 @@
+qa0f<delim>100i <Esc><colnum>|dwjq      Macro that aligns text after <delim> to <colnum>
