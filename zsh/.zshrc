@@ -9,6 +9,10 @@ bindkey -v
 
 export EDITOR=nvim
 
+# Make podman work with docker-compose
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
+export DOCKER_BUILDKIT=0
+
 # functions
 function gdebug () {
     eval "$(GIT_TRACE=1 GIT_TRACE_PACKET=1 GIT_TRACE_PERFORMANCE=1 GIT_CURL_VERBOSE=1 $1 $2)"
