@@ -1,7 +1,7 @@
-@define-color bar-background #363636;
+@define-color bar-background #11111b;
 /*@define-color bar-background #202020;*/
 @define-color icon-hover #aaaaaa;
-@define-color font-color #ffffff;
+@define-color font-color #f5e0dc;
 @define-color border-color rgba(171, 71, 188, 0.95);
 
 * {
