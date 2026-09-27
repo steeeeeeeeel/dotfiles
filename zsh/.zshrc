@@ -38,6 +38,8 @@ alias gd='git diff'
 alias ga='git add'
 alias gcm='git commit -m'
 alias gca='git commit -am'
+alias gps='git push'
+alias gpl='git pull'
 alias gti='git'
 
 alias vi='nvim'
