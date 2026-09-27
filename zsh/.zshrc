@@ -51,6 +51,9 @@ alias btw='neofetch'
 alias iforgot='cat ~/.config/zsh/iforgot.txt'
 alias vimtricks='cat ~/.config/nvim/vimtricks.txt'
 
+# Fix kitty ssh
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/steel/.zshrc'
 
