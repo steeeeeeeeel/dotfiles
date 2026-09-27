@@ -28,7 +28,7 @@ hl.monitor({
     position = "auto-center-up",
     scale = 1
 })
-
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
@@ -67,6 +67,7 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("ANKI_WAYLAND", 1)
+hl.env("SSH_AUTH_SOCK", os.getenv("XDG_RUNTIME_DIR").."/ssh-agent.socket")
 
 
 -----------------------
