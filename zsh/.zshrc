@@ -53,6 +53,8 @@ alias btw='neofetch'
 alias iforgot='cat ~/.config/zsh/iforgot.txt'
 alias vimtricks='cat ~/.config/nvim/vimtricks.txt'
 
+alias alass='/bin/alass-linux64'
+
 # Fix kitty ssh
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
 
