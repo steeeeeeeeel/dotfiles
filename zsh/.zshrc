@@ -51,7 +51,10 @@ alias quit='exit'
 
 alias btw='neofetch'
 alias iforgot='cat ~/.config/zsh/iforgot.txt'
+alias edit_iforgot='nvim ~/.config/zsh/iforgot.txt'
 alias vimtricks='cat ~/.config/nvim/vimtricks.txt'
+alias edit_vimtricks='nvim ~/.config/nvim/vimtricks.txt'
+alias edit_zsh='nvim ~/.config/zsh/.zshrc && source ~/.zshrc'
 
 alias alass='/bin/alass-linux64'
 

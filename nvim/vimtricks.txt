@@ -1,1 +1,2 @@
-qa0f<delim>100i <Esc><colnum>|dwjq      Macro that aligns text after <delim> to <colnum>
+qa0f<delim>100i <Esc><colnum>|dwjq                                   # Macro that aligns text after <delim> to <colnum>
+:args <path>/*.<filetype> | argdo execute "normal gg=G" | update     # Vimscript that autoindents all files of <filetype> in target path
