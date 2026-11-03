@@ -9,10 +9,16 @@ bindkey -v
 
 export EDITOR=nvim
 
+# Include cargo packages in path
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # Make podman work with docker-compose
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 export DOCKER_BUILDKIT=0
 
+# Shit for comfy
+export PYTORCH_HIP_ALLOC_CONF=expandable_segments:True
+export HSA_ENABLE_SDMA=0
 
 # functions
 function gdebug () {
@@ -23,6 +29,10 @@ function webm2gif() {
     ffmpeg -y -i "$1" -vf palettegen _tmp_palette.png
     ffmpeg -y -i "$1" -i _tmp_palette.png -filter_complex paletteuse -r 10 "${1%.webm}.gif"
     rm _tmp_palette.png
+}
+
+function jpwine() {
+    eval "WINEPREFIX='/home/steel/.winejp' LANG=ja_JP.UTF-8 wine $1"
 }
 
 # Alises
@@ -51,12 +61,12 @@ alias quit='exit'
 
 alias btw='neofetch'
 alias iforgot='cat ~/.config/zsh/iforgot.txt'
-alias edit_iforgot='nvim ~/.config/zsh/iforgot.txt'
+alias editiforgot='nvim ~/.config/zsh/iforgot.txt'
 alias vimtricks='cat ~/.config/nvim/vimtricks.txt'
-alias edit_vimtricks='nvim ~/.config/nvim/vimtricks.txt'
-alias edit_zsh='nvim ~/.config/zsh/.zshrc && source ~/.zshrc'
+alias editvimtricks='nvim ~/.config/nvim/vimtricks.txt'
+alias editzsh='nvim ~/.config/zsh/.zshrc && source ~/.zshrc'
 
-alias alass='/bin/alass-linux64'
+alias alass='alass-cli'
 
 # Fix kitty ssh
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
