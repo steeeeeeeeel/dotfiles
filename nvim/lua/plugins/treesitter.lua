@@ -6,11 +6,9 @@ return {
         highlight = {
             enable = true,
             additional_vim_regex_highlighting = false,
-            disable = {}
         },
         indent = {
             enable = true,
-            disable = {}
         },
         ensure_installed = {
             "tsx",

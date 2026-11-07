@@ -1,3 +1,4 @@
 File Recovery                            $ photorec
 Search installed packages                $ pacman -Qs <string>
 Unlock Sudo after failed password entry  $ faillock --user $USER --reset
+Reverse an unzip                         $ unzip -Z -1 <filename.zip> | xargs -I{} rm -rv {}
